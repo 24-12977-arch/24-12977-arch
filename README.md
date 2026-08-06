@@ -1,35 +1,61 @@
-# 👋 Hello, I'm Jake Mathew!
+# 👋 Hi, I'm Jake Mathew Galit
 
-"Patuloy na lalaban para sa pangarap, kahit gaano kahirap ang daan."
+### 🌟 Personal Portfolio
+
+"Patuloy na lumalaban para sa pangarap at patuloy na umaangat sa buhay."
+
 ---
-### 👤 About Me
-* 🦋 *Name:* Jake Mathew M. Galit
-* 📍 *Lives in:* Pob.4 Laurel, Batangas
-* 🌱 **Age:**19
-* 🎂 Birthday: Sept,05,2006
+
+## 👤 About Me
+
+Ako si **Jake Mathew Galit**, 20 years old, mula sa *Pob.4 Laurel Batangas*. Isa akong masipag at determined na tao na may passion sa technology, creativity, at self-improvement. Mahilig akong matuto ng bagong skills lalo na sa larangan ng programming at digital design.
+
 ---
-### 👤 About My Skills
-🌱 Basketball
-🌱 Volleyball
-🌱 Gaming Skills
-🌱 Basic Programming
-🌱 Computer Literacy
-🌱 Troubleshooting
-🌱 Fast Learner
+
+## 🧠 Skills
+
+* 💻 Basic Programming
+* 🛠️ Computer Troubleshooting
+* 🌐 Computer Literacy
+* 🎮 Gaming Skills
+* ⚡ Fast Learner & Adaptable
+
 ---
-### 🎨 My Passions & Interests
-* 🎮 *Playing Online Games* 
-* 📸 *Photography / Art:* Nature photography and Sunsets
-* 💻 Photoshop Business – Managing and editing designs for clients
-* ✈️ *Travel & Exploration:* Love exploring new places
-* 🌍 Exploration – Discovering new places and experiences
+
+## 🎨 Hobbies & Interests
+
+* 🎮 Playing Online Games
+* 📸 Photography (Nature & Moments)
+* 🎧 Listening to Music
+* 🌍 Exploring New Places
+* 💻 Photoshop Editing (May sariling small business for designs)
+
 ---
-### 📈 Current Life Goals
-Improve my programming skills
-Achieve financial stability
-Travel to different places
-Build my own house
-Start a successful business
+
+## 💼 Experience / Projects
+
+* 🖥️ Photoshop Editing Business – Gumagawa ng layouts, tarpaulin, invitations, at iba pang design para sa clients
+* 🔧 Basic Computer Troubleshooting – Pag-aayos ng simple computer issues para sa friends at kakilala
+
 ---
-### 📬 Connect with Me
-- ✉️ Email: jakemathew05@gmail.com
+
+## 🎯 Goals
+
+* 📈 Mapalawak ang skills sa programming
+* 💰 Maging financially stable
+* 🏠 Makapagpatayo ng sariling bahay
+* 🌏 Makapag-travel sa iba't ibang lugar
+* 🚀 Magkaroon ng successful na business
+
+---
+
+## 📬 Contact Me
+
+* 📱 Phone: +63 956 390 7798
+* ✉️ Email: jakemathew05@gmail.com
+
+---
+
+## 💡 Motto
+
+"Success comes from hard work, patience, and never giving up."
