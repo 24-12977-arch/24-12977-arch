@@ -8,7 +8,7 @@
 
 ## 👤 About Me
 
-Ako si **Jake Mathew Galit**, 20 years old, mula sa *Pob.4 Laurel Batangas*. Isa akong masipag at determined na tao na may passion sa technology, creativity, at self-improvement. Mahilig akong matuto ng bagong skills lalo na sa larangan ng programming at digital design.
+Ako si **Jake Mathew Galit**, 19 years old, mula sa *Pob.4 Laurel Batangas*. Isa akong masipag at determined na tao na may passion sa technology, creativity, at self-improvement. Mahilig akong matuto ng bagong skills lalo na sa larangan ng programming at digital design.
 
 ---
 
