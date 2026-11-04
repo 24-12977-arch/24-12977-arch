@@ -1,4 +1,3 @@
-html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -262,6 +261,62 @@ html
             color: #cbd5e1;
         }
 
+        /* ===== PHOTO PRINTING SKILL (NEW) ===== */
+
+        .skill-wide {
+            grid-column: span 2;
+        }
+
+        .skill-icon {
+            display: block;
+
+            font-size: 34px;
+
+            margin-bottom: 8px;
+        }
+
+        .skill-list {
+            list-style: none;
+
+            margin-top: 18px;
+
+            padding-top: 18px;
+
+            border-top: 1px solid #334155;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(200px, 1fr)
+                );
+
+            gap: 8px 20px;
+
+            text-align: left;
+        }
+
+        .skill-list li {
+            color: #cbd5e1;
+
+            font-size: 15px;
+
+            padding-left: 22px;
+
+            position: relative;
+        }
+
+        .skill-list li::before {
+            content: "✔";
+
+            position: absolute;
+
+            left: 0;
+
+            color: #38bdf8;
+        }
+
         /* ================= PROJECTS ================= */
 
         .projects-container {
@@ -410,6 +465,15 @@ html
 
             .section-title {
                 font-size: 30px;
+            }
+
+            /* New Photo Printing card: full width on mobile */
+            .skill-wide {
+                grid-column: span 1;
+            }
+
+            .skill-list {
+                grid-template-columns: 1fr;
             }
 
         }
@@ -669,6 +733,47 @@ html
 
             </div>
 
+
+            <!-- NEW SKILL: PHOTO PRINTING -->
+
+            <div class="skill skill-wide">
+
+                <span class="skill-icon">
+                    🖨️
+                </span>
+
+                <h3>
+                    Photo Printing
+                </h3>
+
+                <p>
+                    Experienced in assisting with our family photo
+                    printing business, including photo printing, basic
+                    photo editing, preparing pictures for printing,
+                    handling customer orders, and providing quality
+                    printed photos.
+                </p>
+
+                <ul class="skill-list">
+
+                    <li>Photo Printing and Processing</li>
+
+                    <li>Basic Photo Editing</li>
+
+                    <li>Photo Resizing and Cropping</li>
+
+                    <li>Picture Layout and Arrangement</li>
+
+                    <li>Customer Service</li>
+
+                    <li>Managing Photo Printing Orders</li>
+
+                    <li>Operating Photo Printing Equipment</li>
+
+                </ul>
+
+            </div>
+
         </div>
 
     </section>
@@ -831,4 +936,3 @@ html
 </body>
 
 </html>
-```
