@@ -1,1016 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Jake Mathew Galit | Personal Portfolio</title>
-
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #0f172a;
-            color: white;
-            line-height: 1.6;
-        }
-
-        /* ================= NAVIGATION ================= */
-
-        header {
-            background: #111827;
-            padding: 18px 8%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid #334155;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #38bdf8;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 25px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: #38bdf8;
-        }
-
-        /* ================= HERO ================= */
-
-        .hero {
-            min-height: 100vh;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            text-align: center;
-
-            padding: 120px 20px 50px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #0f172a,
-                    #1e293b
-                );
-        }
-
-        .hero-content {
-            max-width: 800px;
-        }
-
-        /* ================= PROFILE IMAGE ================= */
-
-        .profile {
-            width: 180px;
-            height: 180px;
-
-            border-radius: 50%;
-
-            object-fit: cover;
-
-            border: 5px solid #38bdf8;
-
-            padding: 5px;
-
-            background: #0f172a;
-
-            margin-bottom: 20px;
-
-            box-shadow:
-                0 0 25px rgba(56, 189, 248, 0.5);
-
-            transition: 0.3s;
-        }
-
-        .profile:hover {
-            transform: scale(1.05);
-
-            box-shadow:
-                0 0 40px rgba(56, 189, 248, 0.8);
-        }
-
-        /* ================= HERO TEXT ================= */
-
-        .hero h1 {
-            font-size: 50px;
-            margin-bottom: 10px;
-        }
-
-        .hero h1 span {
-            color: #38bdf8;
-        }
-
-        .hero p {
-            font-size: 20px;
-            color: #cbd5e1;
-            margin-bottom: 25px;
-        }
-
-        /* ================= BUTTON ================= */
-
-        .btn {
-            display: inline-block;
-
-            padding: 12px 25px;
-
-            background: #38bdf8;
-
-            color: #0f172a;
-
-            text-decoration: none;
-
-            border-radius: 8px;
-
-            font-weight: bold;
-
-            margin: 5px;
-
-            transition: 0.3s;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-
-            background: #7dd3fc;
-
-            box-shadow:
-                0 8px 20px rgba(56, 189, 248, 0.25);
-        }
-
-        /* ================= SECTIONS ================= */
-
-        section {
-            padding: 90px 8%;
-        }
-
-        .section-title {
-            text-align: center;
-
-            font-size: 35px;
-
-            margin-bottom: 45px;
-
-            color: #38bdf8;
-        }
-
-        /* ================= ABOUT ================= */
-
-        .about {
-            max-width: 900px;
-
-            margin: auto;
-
-            text-align: center;
-
-            background: #1e293b;
-
-            padding: 35px;
-
-            border-radius: 15px;
-
-            border: 1px solid #334155;
-
-            box-shadow:
-                0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .about p {
-            color: #cbd5e1;
-
-            font-size: 18px;
-        }
-
-        /* ================= SKILLS ================= */
-
-        .skills-container {
-            display: grid;
-
-            grid-template-columns:
-                repeat(
-                    auto-fit,
-                    minmax(180px, 1fr)
-                );
-
-            gap: 20px;
-        }
-
-        .skill {
-            background: #1e293b;
-
-            padding: 30px;
-
-            text-align: center;
-
-            border-radius: 12px;
-
-            border: 1px solid #334155;
-
-            transition: 0.3s;
-        }
-
-        .skill:hover {
-            transform: translateY(-5px);
-
-            border-color: #38bdf8;
-
-            box-shadow:
-                0 10px 25px rgba(56, 189, 248, 0.15);
-        }
-
-        .skill h3 {
-            margin-bottom: 10px;
-
-            color: #38bdf8;
-        }
-
-        .skill p {
-            color: #cbd5e1;
-        }
-
-        /* ===== PHOTO PRINTING SKILL (NEW) ===== */
-
-        .skill-wide {
-            grid-column: span 2;
-        }
-
-        .skill-icon {
-            display: block;
-
-            font-size: 34px;
-
-            margin-bottom: 8px;
-        }
-
-        .skill-list {
-            list-style: none;
-
-            margin-top: 18px;
-
-            padding-top: 18px;
-
-            border-top: 1px solid #334155;
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(
-                    auto-fit,
-                    minmax(200px, 1fr)
-                );
-
-            gap: 8px 20px;
-
-            text-align: left;
-        }
-
-        .skill-list li {
-            color: #cbd5e1;
-
-            font-size: 15px;
-
-            padding-left: 22px;
-
-            position: relative;
-        }
-
-        .skill-list li::before {
-            content: "✔";
-
-            position: absolute;
-
-            left: 0;
-
-            color: #38bdf8;
-        }
-
-        /* ===== EDUCATION (NEW) ===== */
-
-        .education-container {
-            max-width: 800px;
-
-            margin: auto;
-        }
-
-        /* ================= PROJECTS ================= */
-
-        .projects-container {
-            display: grid;
-
-            grid-template-columns:
-                repeat(
-                    auto-fit,
-                    minmax(250px, 1fr)
-                );
-
-            gap: 25px;
-        }
-
-        .project {
-            background: #1e293b;
-
-            border-radius: 12px;
-
-            overflow: hidden;
-
-            border: 1px solid #334155;
-
-            transition: 0.3s;
-        }
-
-        .project:hover {
-            transform: translateY(-5px);
-
-            border-color: #38bdf8;
-
-            box-shadow:
-                0 10px 25px rgba(56, 189, 248, 0.15);
-        }
-
-        .project img {
-            width: 100%;
-
-            height: 200px;
-
-            object-fit: cover;
-
-            display: block;
-        }
-
-        .project-content {
-            padding: 20px;
-        }
-
-        .project-content h3 {
-            color: #38bdf8;
-
-            margin-bottom: 10px;
-        }
-
-        .project-content p {
-            color: #cbd5e1;
-        }
-
-        /* ================= CONTACT ================= */
-
-        .contact {
-            text-align: center;
-
-            max-width: 600px;
-
-            margin: auto;
-
-            background: #1e293b;
-
-            padding: 35px;
-
-            border-radius: 15px;
-
-            border: 1px solid #334155;
-
-            box-shadow:
-                0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .contact p {
-            color: #cbd5e1;
-
-            margin: 10px;
-
-            font-size: 17px;
-        }
-
-        /* ================= FOOTER ================= */
-
-        footer {
-            text-align: center;
-
-            padding: 25px;
-
-            background: #111827;
-
-            color: #94a3b8;
-
-            border-top: 1px solid #334155;
-        }
-
-        /* ================= MOBILE ================= */
-
-        @media (max-width: 700px) {
-
-            header {
-                padding: 15px 5%;
-            }
-
-            nav {
-                flex-direction: column;
-
-                gap: 15px;
-            }
-
-            nav ul {
-                gap: 12px;
-
-                flex-wrap: wrap;
-
-                justify-content: center;
-            }
-
-            .hero {
-                padding-top: 160px;
-            }
-
-            .hero h1 {
-                font-size: 36px;
-            }
-
-            .hero p {
-                font-size: 17px;
-            }
-
-            .profile {
-                width: 150px;
-
-                height: 150px;
-            }
-
-            section {
-                padding: 70px 5%;
-            }
-
-            .section-title {
-                font-size: 30px;
-            }
-
-            /* New Photo Printing card: full width on mobile */
-            .skill-wide {
-                grid-column: span 1;
-            }
-
-            .skill-list {
-                grid-template-columns: 1fr;
-            }
-
-        }
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jake Mathew Galit | Personal Portfolio</title>
+<style>
+* { margin:0; padding:0; box-sizing:border-box; scroll-behavior:smooth; }
+body { font-family:Arial, sans-serif; background:#0f172a; color:white; line-height:1.6; }
+
+/* NAVIGATION */
+header { background:#111827; padding:18px 8%; position:fixed; width:100%; top:0; z-index:1000; border-bottom:1px solid #334155; }
+nav { display:flex; justify-content:space-between; align-items:center; }
+.logo { font-size:24px; font-weight:bold; color:#38bdf8; }
+nav ul { display:flex; list-style:none; gap:25px; }
+nav ul li a { color:white; text-decoration:none; transition:0.3s; }
+nav ul li a:hover { color:#38bdf8; }
+
+/* HERO */
+.hero { min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center; padding:120px 20px 50px; background:linear-gradient(135deg,#0f172a,#1e293b); }
+.hero-content { max-width:800px; }
+.profile { width:180px; height:180px; border-radius:50%; object-fit:cover; border:5px solid #38bdf8; padding:5px; background:#0f172a; margin-bottom:20px; box-shadow:0 0 25px rgba(56,189,248,0.5); transition:0.3s; }
+.profile:hover { transform:scale(1.05); box-shadow:0 0 40px rgba(56,189,248,0.8); }
+.hero h1 { font-size:50px; margin-bottom:10px; }
+.hero h1 span { color:#38bdf8; }
+.hero p { font-size:20px; color:#cbd5e1; margin-bottom:25px; }
+
+/* BUTTON */
+.btn { display:inline-block; padding:12px 25px; background:#38bdf8; color:#0f172a; text-decoration:none; border-radius:8px; font-weight:bold; margin:5px; transition:0.3s; }
+.btn:hover { transform:translateY(-3px); background:#7dd3fc; box-shadow:0 8px 20px rgba(56,189,248,0.25); }
+
+/* SECTIONS */
+section { padding:90px 8%; }
+.section-title { text-align:center; font-size:35px; margin-bottom:45px; color:#38bdf8; }
+
+/* ABOUT */
+.about { max-width:900px; margin:auto; text-align:center; background:#1e293b; padding:35px; border-radius:15px; border:1px solid #334155; box-shadow:0 10px 30px rgba(0,0,0,0.2); }
+.about p { color:#cbd5e1; font-size:18px; }
+
+/* SKILLS */
+.skills-container { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:20px; }
+.skill { background:#1e293b; padding:30px; text-align:center; border-radius:12px; border:1px solid #334155; transition:0.3s; }
+.skill:hover { transform:translateY(-5px); border-color:#38bdf8; box-shadow:0 10px 25px rgba(56,189,248,0.15); }
+.skill h3 { margin-bottom:10px; color:#38bdf8; }
+.skill p { color:#cbd5e1; }
+.skill-wide { grid-column:span 2; }
+.skill-icon { display:block; font-size:34px; margin-bottom:8px; }
+.skill-list { list-style:none; margin-top:18px; padding-top:18px; border-top:1px solid #334155; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:8px 20px; text-align:left; }
+.skill-list li { color:#cbd5e1; font-size:15px; padding-left:22px; position:relative; }
+.skill-list li::before { content:"✔"; position:absolute; left:0; color:#38bdf8; }
+
+/* EDUCATION */
+.education-container { max-width:800px; margin:auto; }
+
+/* PROJECTS (now clickable cards) */
+.projects-container { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px; }
+.project { display:flex; flex-direction:column; background:#1e293b; border-radius:12px; overflow:hidden; border:1px solid #334155; transition:0.3s; text-decoration:none; color:inherit; cursor:pointer; }
+.project:hover { transform:translateY(-5px); border-color:#38bdf8; box-shadow:0 10px 25px rgba(56,189,248,0.15); }
+.project img { width:100%; height:200px; object-fit:cover; display:block; background:#0f172a; }
+.project-content { padding:20px; display:flex; flex-direction:column; flex:1; }
+.project-content h3 { color:#38bdf8; margin-bottom:10px; }
+.project-content p { color:#cbd5e1; margin-bottom:15px; }
+.project-link { margin-top:auto; color:#38bdf8; font-weight:bold; transition:0.3s; }
+.project:hover .project-link { letter-spacing:1px; }
+
+/* CONTACT */
+.contact { text-align:center; max-width:600px; margin:auto; background:#1e293b; padding:35px; border-radius:15px; border:1px solid #334155; box-shadow:0 10px 30px rgba(0,0,0,0.2); }
+.contact p { color:#cbd5e1; margin:10px; font-size:17px; }
+
+/* FOOTER */
+footer { text-align:center; padding:25px; background:#111827; color:#94a3b8; border-top:1px solid #334155; }
+
+/* MOBILE */
+@media (max-width:700px) {
+  header { padding:15px 5%; }
+  nav { flex-direction:column; gap:15px; }
+  nav ul { gap:12px; flex-wrap:wrap; justify-content:center; }
+  .hero { padding-top:160px; }
+  .hero h1 { font-size:36px; }
+  .hero p { font-size:17px; }
+  .profile { width:150px; height:150px; }
+  section { padding:70px 5%; }
+  .section-title { font-size:30px; }
+  .skill-wide { grid-column:span 1; }
+  .skill-list { grid-template-columns:1fr; }
+}
+</style>
 </head>
-
 
 <body>
 
-
-    <!-- ================= NAVIGATION ================= -->
-
-    <header>
-
-        <nav>
-
-            <div class="logo">
-                JMG.
-            </div>
-
-
-            <ul>
-
-                <li>
-                    <a href="#home">
-                        Home
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#about">
-                        About
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#skills">
-                        Skills
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#education">
-                        Education
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#projects">
-                        Projects
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#contact">
-                        Contact
-                    </a>
-                </li>
-
-            </ul>
-
-        </nav>
-
-    </header>
-
-
-    <!-- ================= HOME ================= -->
-
-    <section
-        class="hero"
-        id="home"
-    >
-
-        <div class="hero-content">
-
-
-            <!-- PROFILE PICTURE -->
-
-            <!--
-                IMPORTANT:
-                Your image filename is:
-                profile.jpg.jfif
-
-                It should be inside:
-                images/profile.jpg.jfif
-            -->
-
-            <img
-                src="images/profile.jpg.jfif"
-                alt="Jake Mathew Galit"
-                class="profile"
-            >
-
-
-            <h1>
-
-                Hello, I'm
-
-                <span>
-                    Jake Mathew
-                </span>
-
-            </h1>
-
-
-            <p>
-                Student |
-                Web Developer |
-                Basketball Enthusiast
-            </p>
-
-
-            <a
-                href="#about"
-                class="btn"
-            >
-                About Me
-            </a>
-
-
-            <a
-                href="#projects"
-                class="btn"
-            >
-                My Projects
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= ABOUT ================= -->
-
-    <section id="about">
-
-        <h2 class="section-title">
-            About Me
-        </h2>
-
-
-        <div class="about">
-
-            <p>
-                Hi! I'm Jake Mathew Galit, a student interested in
-                technology, web development, and creating useful
-                digital projects.
-            </p>
-
-
-            <br>
-
-
-            <p>
-                I enjoy learning HTML, CSS, PHP, MySQL, and other
-                programming technologies.
-            </p>
-
-
-            <br>
-
-
-            <p>
-                I also have practical experience helping run our family
-                photo printing business, where I assist with printing
-                and preparing photos, basic photo editing, and handling
-                customer orders. This work has taught me responsibility,
-                attention to detail, and how to provide quality service
-                to real customers.
-            </p>
-
-
-            <br>
-
-
-            <p>
-                Outside of programming, I enjoy playing basketball,
-                spending time with friends, and learning new skills.
-                My goal is to continue improving my technical skills
-                and create projects that can help people.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= SKILLS ================= -->
-
-    <section id="skills">
-
-        <h2 class="section-title">
-            My Skills
-        </h2>
-
-
-        <div class="skills-container">
-
-
-            <div class="skill">
-
-                <h3>
-                    HTML
-                </h3>
-
-                <p>
-                    Creating website structures and pages.
-                </p>
-
-            </div>
-
-
-            <div class="skill">
-
-                <h3>
-                    CSS
-                </h3>
-
-                <p>
-                    Designing responsive and modern websites.
-                </p>
-
-            </div>
-
-
-            <div class="skill">
-
-                <h3>
-                    PHP
-                </h3>
-
-                <p>
-                    Building dynamic web applications.
-                </p>
-
-            </div>
-
-
-            <div class="skill">
-
-                <h3>
-                    MySQL
-                </h3>
-
-                <p>
-                    Managing and organizing databases.
-                </p>
-
-            </div>
-
-
-            <div class="skill">
-
-                <h3>
-                    UI Design
-                </h3>
-
-                <p>
-                    Creating simple and user-friendly interfaces.
-                </p>
-
-            </div>
-
-
-            <div class="skill">
-
-                <h3>
-                    Problem Solving
-                </h3>
-
-                <p>
-                    Finding solutions to programming problems.
-                </p>
-
-            </div>
-
-
-            <!-- NEW SKILL: PHOTO PRINTING -->
-
-            <div class="skill skill-wide">
-
-                <span class="skill-icon">
-                    🖨️
-                </span>
-
-                <h3>
-                    Photo Printing
-                </h3>
-
-                <p>
-                    Experienced in assisting with our family photo
-                    printing business, including photo printing, basic
-                    photo editing, preparing pictures for printing,
-                    handling customer orders, and providing quality
-                    printed photos.
-                </p>
-
-                <ul class="skill-list">
-
-                    <li>Photo Printing and Processing</li>
-
-                    <li>Basic Photo Editing</li>
-
-                    <li>Photo Resizing and Cropping</li>
-
-                    <li>Picture Layout and Arrangement</li>
-
-                    <li>Customer Service</li>
-
-                    <li>Managing Photo Printing Orders</li>
-
-                    <li>Operating Photo Printing Equipment</li>
-
-                </ul>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= EDUCATION ================= -->
-
-    <section id="education">
-
-        <h2 class="section-title">
-            Education
-        </h2>
-
-
-        <div class="skills-container education-container">
-
-
-            <div class="skill">
-
-                <span class="skill-icon">
-                    🎓
-                </span>
-
-                <h3>
-                    College
-                </h3>
-
-                <p>
-                    Currently a 3rd Year student. Completed 1st Year
-                    and 2nd Year.
-                </p>
-
-            </div>
-
-
-            <div class="skill">
-
-                <span class="skill-icon">
-                    🏫
-                </span>
-
-                <h3>
-                    Senior High School
-                </h3>
-
-                <p>
-                    Graduate of Placido T. Amo Senior High School.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= PROJECTS ================= -->
-
-    <section id="projects">
-
-        <h2 class="section-title">
-            My Projects
-        </h2>
-
-
-        <div class="projects-container">
-
-
-            <!-- PROJECT 1 -->
-
-            <div class="project">
-
-                <img
-                    src="images/project1.jpg"
-                    alt="Tito Berns POS"
-                >
-
-
-                <div class="project-content">
-
-                    <h3>
-                        Tito Berns POS
-                    </h3>
-
-
-                    <p>
-                        A food ordering and point-of-sale system
-                        designed to manage orders, products,
-                        transactions, and receipts.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- PROJECT 2 -->
-
-            <div class="project">
-
-                <img
-                    src="images/project2.jpg"
-                    alt="Digital Printing System"
-                >
-
-
-                <div class="project-content">
-
-                    <h3>
-                        Digital Printing System
-                    </h3>
-
-
-                    <p>
-                        A web-based system for managing printing
-                        services, products, customers, and orders.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- PROJECT 3 -->
-
-            <div class="project">
-
-                <img
-                    src="images/project3.jpg"
-                    alt="Student Web Project"
-                >
-
-
-                <div class="project-content">
-
-                    <h3>
-                        Student Web Project
-                    </h3>
-
-
-                    <p>
-                        A collection of school projects created
-                        using HTML, CSS, PHP, and MySQL.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= CONTACT ================= -->
-
-    <section id="contact">
-
-        <h2 class="section-title">
-            Contact Me
-        </h2>
-
-
-        <div class="contact">
-
-
-            <p>
-                📧 Email:
-                jakemathew05@gmail.com
-            </p>
-
-
-            <p>
-                📱 Phone:
-                09563907798
-            </p>
-
-
-            <p>
-                📍 Pob.4 Laurel Batangas,Philippines
-            </p>
-
-
-            <br>
-
-
-            <a
-                href="mailto:your@email.com"
-                class="btn"
-            >
-                Send Me an Email
-            </a>
-
-        </div>
-
-    </section>
-
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer>
-
-        <p>
-            © 2026 Jake Mathew Galit.
-            All Rights Reserved.
-        </p>
-
-    </footer>
-
+<header>
+  <nav>
+    <div class="logo">JMG.</div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- HOME -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <img src="images/profile.jpg.jfif" alt="Jake Mathew Galit" class="profile">
+    <h1>Hello, I'm <span>Jake Mathew</span></h1>
+    <p>Student | Web Developer | Basketball Enthusiast</p>
+    <a href="#about" class="btn">About Me</a>
+    <a href="#projects" class="btn">My Projects</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2 class="section-title">About Me</h2>
+  <div class="about">
+    <p>Hi! I'm Jake Mathew Galit, a student interested in technology, web development, and creating useful digital projects.</p><br>
+    <p>I enjoy learning HTML, CSS, PHP, MySQL, and other programming technologies.</p><br>
+    <p>I also have practical experience helping run our family photo printing business, where I assist with printing and preparing photos, basic photo editing, and handling customer orders. This work has taught me responsibility, attention to detail, and how to provide quality service to real customers.</p><br>
+    <p>Outside of programming, I enjoy playing basketball, spending time with friends, and learning new skills. My goal is to continue improving my technical skills and create projects that can help people.</p>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2 class="section-title">My Skills</h2>
+  <div class="skills-container">
+    <div class="skill"><h3>HTML</h3><p>Creating website structures and pages.</p></div>
+    <div class="skill"><h3>CSS</h3><p>Designing responsive and modern websites.</p></div>
+    <div class="skill"><h3>PHP</h3><p>Building dynamic web applications.</p></div>
+    <div class="skill"><h3>MySQL</h3><p>Managing and organizing databases.</p></div>
+    <div class="skill"><h3>UI Design</h3><p>Creating simple and user-friendly interfaces.</p></div>
+    <div class="skill"><h3>Problem Solving</h3><p>Finding solutions to programming problems.</p></div>
+
+    <div class="skill skill-wide">
+      <span class="skill-icon">🖨️</span>
+      <h3>Photo Printing</h3>
+      <p>Experienced in assisting with our family photo printing business, including photo printing, basic photo editing, preparing pictures for printing, handling customer orders, and providing quality printed photos.</p>
+      <ul class="skill-list">
+        <li>Photo Printing and Processing</li>
+        <li>Basic Photo Editing</li>
+        <li>Photo Resizing and Cropping</li>
+        <li>Picture Layout and Arrangement</li>
+        <li>Customer Service</li>
+        <li>Managing Photo Printing Orders</li>
+        <li>Operating Photo Printing Equipment</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <h2 class="section-title">Education</h2>
+  <div class="skills-container education-container">
+    <div class="skill"><span class="skill-icon">🎓</span><h3>College</h3><p>Currently a 3rd Year student. Completed 1st Year and 2nd Year.</p></div>
+    <div class="skill"><span class="skill-icon">🏫</span><h3>Senior High School</h3><p>Graduate of Placido T. Amo Senior High School.</p></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<!--
+  PAALALA:
+  1. Palitan ang href ng actual link/folder ng system mo
+     (hal. "tito-berns-pos/index.php" o "http://localhost/tito-berns-pos/").
+  2. Ilagay ang mga picture sa folder na "images" katabi ng index.html:
+     images/project1.jpg, images/project2.jpg, images/project3.jpg
+     (dapat eksakto ang pangalan at extension).
+-->
+<section id="projects">
+  <h2 class="section-title">My Projects</h2>
+  <div class="projects-container">
+
+    <a class="project" href="tito-berns-pos/index.php" target="_blank" rel="noopener">
+      <img src="images/project1.jpg" alt="Tito Berns POS">
+      <div class="project-content">
+        <h3>Tito Berns POS</h3>
+        <p>A food ordering and point-of-sale system designed to manage orders, products, transactions, and receipts.</p>
+        <span class="project-link">View Project →</span>
+      </div>
+    </a>
+
+    <a class="project" href="digital-printing-system/index.php" target="_blank" rel="noopener">
+      <img src="images/project2.jpg" alt="Digital Printing System">
+      <div class="project-content">
+        <h3>Digital Printing System</h3>
+        <p>A web-based system for managing printing services, products, customers, and orders.</p>
+        <span class="project-link">View Project →</span>
+      </div>
+    </a>
+
+    <a class="project" href="student-web-project/index.html" target="_blank" rel="noopener">
+      <img src="images/project3.jpg" alt="Student Web Project">
+      <div class="project-content">
+        <h3>Student Web Project</h3>
+        <p>A collection of school projects created using HTML, CSS, PHP, and MySQL.</p>
+        <span class="project-link">View Project →</span>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2 class="section-title">Contact Me</h2>
+  <div class="contact">
+    <p>📧 Email: jakemathew05@gmail.com</p>
+    <p>📱 Phone: 09563907798</p>
+    <p>📍 Pob.4 Laurel Batangas, Philippines</p>
+    <br>
+    <a href="mailto:jakemathew05@gmail.com" class="btn">Send Me an Email</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Jake Mathew Galit. All Rights Reserved.</p>
+</footer>
+
+<script>
+/* Kapag hindi makita ang picture, may placeholder na lalabas
+   (para hindi sira ang itsura ng card). */
+document.querySelectorAll('.project img').forEach(function (img) {
+  img.addEventListener('error', function () {
+    var label = (img.alt || 'Project').replace(/&/g, '&amp;').replace(/</g, '&lt;');
+    var svg =
+      '<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400">' +
+      '<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">' +
+      '<stop offset="0" stop-color="#0ea5e9"/><stop offset="1" stop-color="#1e293b"/>' +
+      '</linearGradient></defs>' +
+      '<rect width="600" height="400" fill="url(#g)"/>' +
+      '<text x="300" y="210" font-family="Arial" font-size="32" font-weight="bold" ' +
+      'fill="white" text-anchor="middle">' + label + '</text></svg>';
+    img.onerror = null;
+    img.src = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+  }, { once: true });
+  if (img.complete && img.naturalWidth === 0) img.dispatchEvent(new Event('error'));
+});
+</script>
 
 </body>
-
 </html>
