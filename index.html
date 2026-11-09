@@ -50,8 +50,8 @@ h1,h2{font-weight:600;letter-spacing:-.045em;line-height:1.04}
 .btn.ln:hover{background:var(--ink);color:#fff}
 
 /* hero */
-.who{display:grid;grid-template-columns:150px 1fr;gap:28px;margin-top:56px;align-items:start;max-width:760px}
-.photo{width:150px;aspect-ratio:1;border-radius:14px;object-fit:cover;background:linear-gradient(135deg,#ff5a1f,#2a0e05)}
+.who{display:grid;grid-template-columns:clamp(240px,30vw,360px) 1fr;gap:36px;margin-top:56px;align-items:end;max-width:980px}
+.photo{width:100%;aspect-ratio:4/5;border-radius:18px;object-fit:cover;background:linear-gradient(135deg,#ff5a1f,#2a0e05)}
 .who p{color:#3d3d38;font-size:16px;max-width:52ch}
 .who .row{margin-top:22px;display:flex;gap:10px;flex-wrap:wrap}
 .marquee{margin-top:70px;border-top:1px solid var(--line);padding-top:22px;display:flex;gap:clamp(20px,5vw,64px);flex-wrap:wrap;font-weight:600;font-size:clamp(18px,2.4vw,28px);letter-spacing:-.03em;color:#9a9a92}
@@ -133,7 +133,7 @@ h1,h2{font-weight:600;letter-spacing:-.045em;line-height:1.04}
  .sec{grid-template-columns:1fr}
  .side{writing-mode:horizontal-tb;transform:none;font-size:clamp(40px,14vw,70px);margin:0 0 -50px;order:2;position:absolute;opacity:0;height:0}
  .meta{padding-bottom:40px}
- .who{grid-template-columns:100px 1fr}.photo{width:100px}
+ .who{grid-template-columns:1fr}.photo{max-width:340px}
  .works{grid-template-columns:1fr}.work:nth-child(even){margin-top:0}
  .stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line);padding-left:0}
 }
