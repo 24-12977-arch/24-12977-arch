@@ -4,316 +4,352 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Jake Mathew Galit - student, web developer and basketball enthusiast. Personal portfolio.">
-<meta name="theme-color" content="#060504">
-<title>Jake Mathew Galit | Portfolio</title>
+<meta name="theme-color" content="#0c0c0c">
+<title>Jake Mathew Galit | Web Developer Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#0d0d0d;--paper:#f6f6f4;--mute:#76766f;--line:#dcdcd6;--ghost:#e4e4de;--hot:#ff5a1f;--f:'Inter Tight','Helvetica Neue',Arial,system-ui,sans-serif}
+:root{--bg:#0c0c0c;--card:#141414;--line:#262626;--tx:#f2f2f0;--mu:#a09e99;--or:#ff5a28;--or2:#ff8a3d;--hd:'Syne','Arial Black',system-ui,sans-serif;--bd:'Inter',system-ui,-apple-system,'Segoe UI',Arial,sans-serif}
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:var(--f);background:#060504;color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:var(--bd);background:var(--bg);color:var(--tx);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
-:focus-visible{outline:2px solid var(--hot);outline-offset:3px}
-::selection{background:var(--hot);color:#fff}
+:focus-visible{outline:2px solid var(--or);outline-offset:3px}
+::selection{background:var(--or);color:#000}
+.w{width:min(1180px,100% - 48px);margin:auto}
+section{padding:110px 0}
+h1,h2,h3{font-family:var(--hd);font-weight:700;letter-spacing:-.02em;line-height:1.08}
+h2{font-size:clamp(34px,5.4vw,64px)}
+.kick{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mu);margin-bottom:18px}
+.kick::before{content:"◆";color:var(--or);font-size:10px}
+.sub{color:var(--mu);max-width:46ch;margin-top:16px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;background:var(--or);color:#120600;font-weight:600;font-size:14px;border:0;cursor:pointer;font-family:inherit;transition:transform .25s,background .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-2px);background:var(--or2);box-shadow:0 10px 30px -10px var(--or)}
+.btn.ghost{background:transparent;color:var(--tx);border:1px solid #3a3a3a}
+.btn.ghost:hover{border-color:var(--or);color:var(--or);box-shadow:none}
 
-/* glowing backdrop */
-.glow{position:fixed;inset:0;z-index:-1;overflow:hidden;background:#060504}
-.glow::before{content:"";position:absolute;inset:-20%;background:
- radial-gradient(40% 35% at 95% 8%,rgba(255,90,31,.85),transparent 70%),
- radial-gradient(45% 40% at 0% 100%,rgba(200,40,10,.75),transparent 70%),
- linear-gradient(112deg,transparent 38%,rgba(255,70,10,.6) 46%,rgba(255,190,140,.95) 49.5%,rgba(255,70,10,.5) 53%,transparent 62%);filter:blur(28px);animation:drift 14s ease-in-out infinite alternate}
-@keyframes drift{to{transform:translate(-4%,3%) scale(1.06)}}
-
-/* the white sheet */
-.sheet{max-width:1320px;margin:20px auto;background:var(--paper);border-radius:22px;overflow:hidden;box-shadow:0 40px 120px rgba(0,0,0,.55)}
-.top{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px clamp(20px,4vw,48px);position:sticky;top:0;z-index:20;background:rgba(246,246,244,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.brand{font-weight:700;letter-spacing:-.03em;font-size:18px}
-.top nav{display:flex;gap:clamp(12px,2.4vw,30px);font-size:14px;color:var(--mute);flex-wrap:wrap;justify-content:flex-end}
-.top nav a{transition:color .2s}.top nav a:hover,.top nav a.on{color:var(--ink)}
-
-.sec{display:grid;grid-template-columns:clamp(70px,11vw,150px) 1fr;padding:0 clamp(20px,4vw,48px) 90px;border-bottom:1px solid var(--line)}
-.side{writing-mode:vertical-rl;transform:rotate(180deg);font-size:clamp(46px,7.5vw,104px);font-weight:600;letter-spacing:-.05em;color:var(--ghost);line-height:1;align-self:start;margin-top:70px;white-space:nowrap}
-.main{min-width:0}
-.meta{display:flex;align-items:center;gap:16px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--mute);padding:26px 0 70px}
-.meta i{flex:1;height:1px;background:var(--line)}
-
-h1,h2{font-weight:600;letter-spacing:-.045em;line-height:1.04}
-.lead{font-size:clamp(28px,4.6vw,58px);max-width:20ch;max-width:24em}
-.lead em{font-style:normal;color:var(--mute)}
-.big{font-size:clamp(52px,10vw,138px);letter-spacing:-.06em;margin-bottom:46px}
-.big::before{content:"";display:inline-block;width:.1em;height:.1em;margin-right:.08em;border-radius:50%;background:var(--ink);box-shadow:.14em 0 0 var(--hot)}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;background:var(--ink);color:#fff;font-weight:500;font-size:15px;border:0;cursor:pointer;transition:background .25s,transform .25s;font-family:inherit}
-.btn:hover{background:var(--hot);transform:translateY(-2px)}
-.btn.ln{background:transparent;color:var(--ink);border:1px solid var(--ink)}
-.btn.ln:hover{background:var(--ink);color:#fff}
+/* nav */
+header{position:fixed;inset:0 0 auto;z-index:50;background:rgba(12,12,12,.8);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:var(--hd);font-weight:800;font-size:15px;letter-spacing:.02em}
+nav{display:flex;gap:30px;font-size:14px;color:var(--mu)}
+nav a{position:relative;transition:color .2s}
+nav a:hover,nav a.on{color:var(--tx)}
+nav a.on::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--or)}
+.menu{display:none;background:none;border:1px solid var(--line);color:var(--tx);width:42px;height:42px;border-radius:12px;font-size:18px;cursor:pointer}
 
 /* hero */
-.who{display:grid;grid-template-columns:clamp(240px,30vw,360px) 1fr;gap:36px;margin-top:56px;align-items:end;max-width:980px}
-.photo{width:100%;aspect-ratio:4/5;border-radius:18px;object-fit:cover;background:linear-gradient(135deg,#ff5a1f,#2a0e05)}
-.who p{color:#3d3d38;font-size:16px;max-width:52ch}
-.who .row{margin-top:22px;display:flex;gap:10px;flex-wrap:wrap}
-.marquee{margin-top:70px;border-top:1px solid var(--line);padding-top:22px;display:flex;gap:clamp(20px,5vw,64px);flex-wrap:wrap;font-weight:600;font-size:clamp(18px,2.4vw,28px);letter-spacing:-.03em;color:#9a9a92}
-.status{display:inline-flex;align-items:center;gap:8px;font-size:13px;margin-bottom:26px;color:#3d3d38}
-.status::before{content:"";width:8px;height:8px;border-radius:50%;background:#2fbf71;animation:ping 2s infinite}
-@keyframes ping{70%{box-shadow:0 0 0 9px rgba(47,191,113,0)}0%{box-shadow:0 0 0 0 rgba(47,191,113,.6)}}
-.in{animation:up .9s cubic-bezier(.22,1,.36,1) both}.in:nth-child(2){animation-delay:.1s}.in:nth-child(3){animation-delay:.2s}
-@keyframes up{from{opacity:0;transform:translateY(28px)}}
+.hero{padding:150px 0 90px;background:radial-gradient(600px 420px at 85% 30%,rgba(255,90,40,.22),transparent 70%)}
+.hero .w{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(40px,7vw,92px);font-weight:800;line-height:1}
+.hero h1 span{color:var(--or)}
+.hero p{color:var(--mu);font-size:18px;max-width:48ch;margin:26px 0 34px}
+.hero .row{display:flex;gap:12px;flex-wrap:wrap}
+.live{display:inline-flex;align-items:center;gap:10px;padding:7px 14px;border:1px solid var(--line);border-radius:999px;font-size:13px;color:var(--mu);margin-bottom:26px}
+.live::before{content:"";width:8px;height:8px;border-radius:50%;background:#35d07f;animation:ping 2s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(53,208,127,.6)}70%,100%{box-shadow:0 0 0 9px transparent}}
+.pic{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/5;background:linear-gradient(160deg,#ff8a3d,#b8280a 55%,#1a0a04);border:1px solid #3a2218;box-shadow:0 40px 90px -30px rgba(255,90,40,.5)}
+.pic img{width:100%;height:100%;object-fit:cover;display:block}
+.pic figcaption{position:absolute;left:14px;bottom:14px;background:rgba(12,12,12,.75);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:10px 16px;border-radius:14px;font-size:13px}
+.pic figcaption b{display:block;font-family:var(--hd);font-size:15px}
+.tech{margin-top:60px;border-top:1px solid var(--line);padding-top:24px;display:flex;gap:clamp(18px,4vw,56px);flex-wrap:wrap;color:#6d6b67;font-family:var(--hd);font-weight:700;font-size:clamp(16px,2vw,22px)}
 
-/* works */
-.works{display:grid;grid-template-columns:repeat(2,1fr);gap:44px 28px}
-.work{display:block}
-.work:nth-child(even){margin-top:70px}
-.thumb{aspect-ratio:4/3;border-radius:14px;overflow:hidden;background:#111;position:relative}
-.thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .9s cubic-bezier(.22,1,.36,1)}
-.work:hover img{transform:scale(1.06)}
-.thumb b{position:absolute;right:14px;top:14px;background:#fff;border-radius:50%;width:40px;height:40px;display:grid;place-items:center;font-size:18px;opacity:0;transform:scale(.6);transition:.35s}
-.work:hover .thumb b{opacity:1;transform:none}
-.work h3{font-size:22px;letter-spacing:-.03em;margin-top:16px;font-weight:600}
-.work p{color:var(--mute);font-size:15px;max-width:44ch}
-.work small{display:block;font-size:12px;color:var(--mute);margin-top:6px}
+/* work */
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:34px 0 40px}
+.pill{padding:8px 18px;border-radius:999px;border:1px solid #333;background:transparent;color:var(--mu);font:500 12px var(--bd);letter-spacing:.08em;text-transform:uppercase;cursor:pointer;transition:.25s}
+.pill:hover{border-color:var(--or);color:var(--tx)}
+.pill.on{background:var(--or);border-color:var(--or);color:#120600}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:40px 28px}
+.proj{display:block;transition:opacity .35s,transform .35s}
+.proj.hide{display:none}
+.proj.fade{opacity:0;transform:translateY(14px)}
+.th{position:relative;aspect-ratio:16/10;border-radius:20px;overflow:hidden;background:linear-gradient(135deg,#ff8a3d,#8c1c05 60%,#140603);border:1px solid var(--line)}
+.th img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s cubic-bezier(.22,1,.36,1)}
+.proj:hover .th img{transform:scale(1.07)}
+.view{position:absolute;right:16px;top:16px;width:68px;height:68px;border-radius:50%;background:var(--or);color:#120600;display:grid;place-items:center;font-size:12px;font-weight:600;transform:scale(.4);opacity:0;transition:.4s cubic-bezier(.22,1,.36,1)}
+.proj:hover .view{transform:none;opacity:1}
+.idx{font-size:11px;letter-spacing:.14em;color:var(--mu);margin-top:16px;text-transform:uppercase}
+.proj h3{font-size:25px;margin:2px 0 6px}
+.proj p{color:var(--mu);font-size:14.5px;max-width:50ch}
+.tags{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.tags i{font-style:normal;font-size:11px;padding:3px 10px;border-radius:6px;border:1px solid #4a2a1c;color:var(--or2);background:rgba(255,90,40,.08)}
 
-/* bento */
-.bento{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.tile{border-radius:16px;padding:24px;min-height:210px;display:flex;flex-direction:column;justify-content:space-between;background:#ecece7;transition:transform .35s cubic-bezier(.22,1,.36,1)}
-.tile:hover{transform:translateY(-6px)}
-.tile h3{font-size:24px;letter-spacing:-.04em;font-weight:600}
-.tile p{font-size:14px;color:var(--mute)}
-.tile .ic{font-size:30px}
-.tile.dk{background:#0d0d0d;color:#fff}.tile.dk p{color:#a9a9a0}
-.tile.hot{background:linear-gradient(150deg,#ff5a1f,#9a1d05);color:#fff}.tile.hot p{color:#ffd8c6}
-.tile.w2{grid-column:span 2}
-.list{margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px 24px;font-size:14px}
-.list li{list-style:none;border-top:1px solid rgba(255,255,255,.18);padding-top:8px}
+/* about */
+.about{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:center}
+.about .pic{aspect-ratio:1;max-width:420px}
+.about p{color:var(--mu);margin-top:18px;max-width:58ch}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.num{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.num b{display:block;font-family:var(--hd);font-size:clamp(36px,5vw,56px);line-height:1}
+.num span{font-size:13px;color:var(--mu)}
 
-/* stats */
-.stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
-.stat{padding:26px 0;border-right:1px solid var(--line);padding-left:22px}
-.stat:first-child{padding-left:0}.stat:last-child{border:0}
-.stat b{display:block;font-size:clamp(48px,8vw,104px);font-weight:600;letter-spacing:-.06em;line-height:1}
-.stat span{color:var(--mute);font-size:14px}
+/* experience */
+.tl{display:grid;grid-template-columns:1fr 1.4fr;gap:60px}
+.steps{position:relative;list-style:none;padding-left:34px}
+.steps::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:1px;background:var(--line)}
+.steps li{position:relative;padding:0 0 38px}
+.steps li::before{content:"";position:absolute;left:-34px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--or);box-shadow:0 0 0 5px rgba(255,90,40,.15)}
+.steps time{font-size:12px;color:var(--mu);letter-spacing:.08em;text-transform:uppercase}
+.steps h3{font-size:22px;margin:4px 0}
+.steps p{color:var(--mu);font-size:15px}
+.badges{margin-top:100px}
+.rows{display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px;margin-top:34px}
+.rw{display:flex;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);transition:padding .3s,color .3s}
+.rw:hover{padding-left:10px;color:var(--or)}
+.rw b{font-weight:500;display:block;font-size:16px}
+.rw small{color:var(--mu);font-size:13px}
+.rw time{color:var(--mu);font-size:13px;white-space:nowrap}
 
-/* rows (education / certificates) */
-.rows{border-top:1px solid var(--line)}
-.rw{display:grid;grid-template-columns:1.6fr 1fr auto;gap:20px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--line);transition:padding .3s,background .3s}
-.rw:hover{padding-left:14px;background:#fff}
-.rw h3{font-size:clamp(20px,2.4vw,30px);letter-spacing:-.04em;font-weight:600}
-.rw p,.rw time{color:var(--mute);font-size:14px}
-.rw time{white-space:nowrap}
+/* services */
+.svc{display:grid;gap:16px;margin-top:44px}
+.card{display:grid;grid-template-columns:1.1fr 1fr;gap:30px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:34px;transition:border-color .3s,transform .4s cubic-bezier(.22,1,.36,1)}
+.card:hover{border-color:#5a2c1a;transform:translateY(-4px)}
+.card em{font-style:normal;color:var(--or);font-size:12px;letter-spacing:.1em}
+.card h3{font-size:clamp(24px,3vw,34px);margin:8px 0 10px}
+.card p{color:var(--mu);max-width:44ch}
+.card small{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mu);margin-bottom:12px}
+.card ul{list-style:none;display:flex;gap:8px;flex-wrap:wrap}
+.card li{font-size:12px;padding:5px 12px;border:1px solid #333;border-radius:999px;color:#d4d2cd}
 
 /* faq */
-.faq details{border-top:1px solid var(--line)}
-.faq details:last-child{border-bottom:1px solid var(--line)}
-.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding:22px 0;font-weight:600;font-size:clamp(17px,2vw,22px);letter-spacing:-.03em}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";font-size:28px;line-height:1;transition:transform .35s}
-.faq details[open] summary::after{transform:rotate(45deg);color:var(--hot)}
-.faq p{padding:0 0 24px;color:#3d3d38;max-width:62ch;animation:up .5s both}
+.faqw{display:grid;grid-template-columns:1fr 1.3fr;gap:60px}
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:16px;align-items:center;padding:22px 0;font-weight:500;font-size:17px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";width:28px;height:28px;flex:none;border:1px solid #3a3a3a;border-radius:50%;display:grid;place-items:center;font-size:16px;transition:.3s}
+details[open] summary::after{transform:rotate(45deg);background:var(--or);border-color:var(--or);color:#120600}
+details p{color:var(--mu);padding:0 40px 22px 0;animation:dn .4s both}
+@keyframes dn{from{opacity:0;transform:translateY(-6px)}}
 
-/* contact */
-.end{background:#050403;color:#fff;padding:0 clamp(20px,4vw,48px) 0}
-.end .meta{color:#8d8d85}.end .meta i{background:#2a2a26}
-.end .tag{font-size:clamp(24px,3.4vw,42px);letter-spacing:-.04em;font-weight:600;max-width:16em;line-height:1.1}
-.end .tag em{font-style:normal;color:#77776f}
-.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;margin:48px 0;border-top:1px solid #2a2a26}
-.links>*{padding:20px 0;border-bottom:1px solid #2a2a26;font-size:15px;color:#d8d8d0;transition:color .2s}
-.links a:hover{color:var(--hot)}
-.links small{display:block;color:#77776f;font-size:12px}
-.end .btn{background:#fff;color:#0d0d0d}.end .btn:hover{background:var(--hot);color:#fff}
-.giant{font-size:clamp(48px,13.4vw,190px);font-weight:700;letter-spacing:-.065em;line-height:.9;margin-top:70px;white-space:nowrap;overflow:hidden;padding-bottom:10px}
-.foot{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:22px 0 26px;font-size:12px;color:#77776f;border-top:1px solid #2a2a26}
+/* cta + footer */
+.cta{padding:0 0 100px}
+.cta .box{border:1px solid var(--line);border-radius:28px;text-align:center;padding:90px 24px;background:radial-gradient(520px 260px at 50% 110%,rgba(255,90,40,.35),transparent 70%),var(--card)}
+.cta h2{max-width:14em;margin:0 auto 28px}
+.cta .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer{border-top:1px solid var(--line);padding:64px 0 0;overflow:hidden}
+.fg{display:grid;grid-template-columns:1.4fr repeat(3,1fr);gap:36px}
+footer h4{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mu);font-weight:500;margin-bottom:14px}
+footer li{list-style:none;font-size:14px;margin-bottom:8px;color:#d4d2cd}
+footer a:hover{color:var(--or)}
+footer .about-f{color:var(--mu);font-size:14px;max-width:34ch;margin-top:10px}
+.bot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:50px;padding:20px 0;border-top:1px solid var(--line);font-size:13px;color:var(--mu)}
+.ghost-name{font-family:var(--hd);font-weight:800;font-size:clamp(54px,15.5vw,210px);line-height:.8;letter-spacing:-.03em;color:#171717;white-space:nowrap;text-align:center;margin-top:20px;user-select:none}
+
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.rv.in{opacity:1;transform:none}
 
 @media(max-width:900px){
- .bento{grid-template-columns:repeat(2,1fr)}
- .rw{grid-template-columns:1fr auto}.rw p{grid-column:1/-1;order:3}
+ section{padding:80px 0}
+ .hero .w,.about,.tl,.faqw,.card{grid-template-columns:1fr}
+ .hero .pic{max-width:380px}
+ .rows{grid-template-columns:1fr}
+ .fg{grid-template-columns:1fr 1fr}
 }
-@media(max-width:700px){
- .top nav{display:none}
- .sec{grid-template-columns:1fr}
- .side{writing-mode:horizontal-tb;transform:none;font-size:clamp(40px,14vw,70px);margin:0 0 -50px;order:2;position:absolute;opacity:0;height:0}
- .meta{padding-bottom:40px}
- .who{grid-template-columns:1fr}.photo{max-width:340px}
- .works{grid-template-columns:1fr}.work:nth-child(even){margin-top:0}
- .stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line);padding-left:0}
+@media(max-width:720px){
+ .menu{display:block}
+ header .btn{display:none}
+ nav{position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:0;background:#0f0f0f;border-bottom:1px solid var(--line);padding:8px 24px;display:none}
+ nav.open{display:flex}
+ nav a{padding:14px 0;border-bottom:1px solid var(--line)}
+ nav a.on::after{display:none}
+ .grid{grid-template-columns:1fr}
+ .nums{grid-template-columns:1fr}
 }
-@media(max-width:460px){.bento{grid-template-columns:1fr}.tile.w2{grid-column:auto}}
-@media(prefers-reduced-motion:reduce){*,*::before{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.rv{opacity:1;transform:none}}
 </style>
 </head>
 <body>
-<div class="glow" aria-hidden="true"></div>
 
-<div class="sheet">
-<header class="top">
-  <a class="brand" href="#home">Jake Mathew Galit</a>
-  <nav id="nav">
-    <a href="#about">About</a><a href="#works">Works</a><a href="#skills">Skills</a><a href="#education">Education</a><a href="#certificates">Certificates</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
-  </nav>
+<header>
+  <div class="w bar">
+    <a class="brand" href="#home">JAKE GALIT</a>
+    <nav id="nav"><a href="#work">Work</a><a href="#about">About</a><a href="#experience">Experience</a><a href="#services">Services</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></nav>
+    <a class="btn" href="#contact">Let's talk ↗</a>
+    <button class="menu" id="menu" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  </div>
 </header>
 
-<!-- INTRO -->
-<section class="sec" id="home">
-  <div class="side" aria-hidden="true">/about me</div>
-  <div class="main" id="about">
-    <div class="meta"><span>01</span><i></i><span>/Introduction</span></div>
-    <div class="status in">Open to learn &amp; build new projects</div>
-    <h1 class="lead in">I build web systems that are simple to use. <em>PHP, MySQL and clean interfaces, made by a student who keeps learning.</em></h1>
-    <div class="who in">
-      <img class="photo" src="images/profile.jpg.jfif" alt="Jake Mathew Galit">
-      <div>
-        <p>Hi, I'm Jake Mathew Galit, a 3rd year college student from Laurel, Batangas. I enjoy web development and making useful digital projects. Outside of code, I play basketball and help run our family photo printing business.</p>
-        <div class="row"><a class="btn" href="#works">See my works</a><a class="btn ln" href="#contact">Contact me</a></div>
+<main>
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="w">
+    <div>
+      <div class="live">Open to learn &amp; build new projects</div>
+      <h1>Student developer building <span>useful web systems.</span></h1>
+      <p>I'm Jake Mathew Galit, a 3rd year college student from Laurel, Batangas. I build websites and web apps with HTML, CSS, PHP and MySQL, and I help run our family photo printing business.</p>
+      <div class="row"><a class="btn" href="#work">See my work ↗</a><a class="btn ghost" href="#contact">Get in touch</a></div>
+    </div>
+    <figure class="pic"><img src="images/profile.jpg.jfif" alt="Jake Mathew Galit"><figcaption><b>Jake Mathew Galit</b>Student &amp; web developer</figcaption></figure>
+  </div>
+  <div class="w tech" aria-label="Technologies"><span>HTML</span><span>CSS</span><span>PHP</span><span>MySQL</span><span>UI Design</span></div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+  <div class="w">
+    <div class="rv"><span class="kick">Portfolio</span><h2>Selected work</h2><p class="sub">Web systems and websites built with PHP, MySQL, HTML and CSS.</p></div>
+    <div class="filters rv" role="group" aria-label="Filter by category">
+      <button class="pill on" data-f="all">All</button><button class="pill" data-f="systems">Web systems</button><button class="pill" data-f="websites">Websites</button>
+    </div>
+    <div class="grid">
+      <a class="proj" data-c="systems" href="#" data-soon><div class="th"><img src="images/project2.jpg" alt="Digital Printing System"><span class="view">Soon</span></div><div class="idx">#001</div><h3>Digital Printing System</h3><p>A web-based system for managing printing services, products, customers, and orders.</p><div class="tags"><i>PHP</i><i>MySQL</i><i>Link coming soon</i></div></a>
+      <a class="proj" data-c="websites" href="#" data-soon><div class="th"><img src="images/project3.jpg" alt="Student Web Project"><span class="view">Soon</span></div><div class="idx">#002</div><h3>Student Web Project</h3><p>A collection of school projects created using HTML, CSS, PHP, and MySQL.</p><div class="tags"><i>HTML</i><i>CSS</i><i>PHP</i><i>Link coming soon</i></div></a>
+      <a class="proj" data-c="systems" href="https://lcctticketing.42web.io/auth/login.php" target="_blank" rel="noopener"><div class="th"><img src="images/project4.jpg" alt="LCCT Ticketing System"><span class="view">View</span></div><div class="idx">#003</div><h3>LCCT Ticketing System</h3><p>A web-based ticketing system with user login.</p><div class="tags"><i>PHP</i><i>MySQL</i><i>Login</i></div></a>
+      <a class="proj" data-c="systems" href="https://myrdaplus.42web.io/myrdaplus-web/myrdaplus/login.php?i=1" target="_blank" rel="noopener"><div class="th"><img src="images/project5.jpg" alt="MyRDA Plus"><span class="view">View</span></div><div class="idx">#004</div><h3>MyRDA Plus</h3><p>A web-based system with secure login.</p><div class="tags"><i>PHP</i><i>MySQL</i><i>Login</i></div></a>
+      <a class="proj" data-c="websites" href="https://planetplayground.42web.io/?i=1" target="_blank" rel="noopener"><div class="th"><img src="images/project6.jpg" alt="Planet Playground"><span class="view">View</span></div><div class="idx">#005</div><h3>Planet Playground</h3><p>A website project created using HTML, CSS, PHP, and MySQL.</p><div class="tags"><i>HTML</i><i>CSS</i><i>PHP</i><i>MySQL</i></div></a>
+      <a class="proj" data-c="systems" href="https://cafe.talk4fun.net/cafe/admin_login.php" target="_blank" rel="noopener"><div class="th"><img src="images/project7.jpg" alt="Tito Berns POS"><span class="view">View</span></div><div class="idx">#006</div><h3>Tito Berns POS</h3><p>A food ordering and point-of-sale system for orders, products, transactions, and receipts.</p><div class="tags"><i>PHP</i><i>MySQL</i><i>POS</i></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="w about">
+    <figure class="pic rv"><img src="images/profile.jpg.jfif" alt="Jake Mathew Galit portrait"><figcaption><b>Jake Mathew Galit</b>Laurel, Batangas</figcaption></figure>
+    <div class="rv">
+      <span class="kick">About me</span>
+      <h2>A student who learned by building</h2>
+      <p>I'm interested in technology, web development, and creating useful digital projects. I enjoy learning HTML, CSS, PHP, MySQL, and other programming technologies.</p>
+      <p>Outside of programming, I enjoy playing basketball, spending time with friends, and learning new skills. My goal is to keep improving my technical skills and create projects that can help people.</p>
+      <div class="nums">
+        <div class="num"><b data-n="6">0</b><span>Projects built</span></div>
+        <div class="num"><b data-n="6">0</b><span>Cisco badges earned</span></div>
+        <div class="num"><b data-n="3" data-s="rd">0</b><span>Year college student</span></div>
       </div>
     </div>
-    <div class="marquee" aria-label="Technologies"><span>HTML</span><span>CSS</span><span>PHP</span><span>MySQL</span><span>UI Design</span></div>
   </div>
 </section>
 
-<!-- WORKS -->
-<section class="sec" id="works">
-  <div class="side" aria-hidden="true">/works</div>
-  <div class="main">
-    <div class="meta"><span>02</span><i></i><span>/Features</span></div>
-    <h2 class="big">best works</h2>
-    <div class="works">
-      <a class="work" href="#" data-soon><div class="thumb"><img src="images/project2.jpg" alt="Digital Printing System"><b>↗</b></div><h3>Digital Printing System</h3><p>A web-based system for managing printing services, products, customers, and orders.</p><small>Link coming soon</small></a>
-      <a class="work" href="#" data-soon><div class="thumb"><img src="images/project3.jpg" alt="Student Web Project"><b>↗</b></div><h3>Student Web Project</h3><p>A collection of school projects created using HTML, CSS, PHP, and MySQL.</p><small>Link coming soon</small></a>
-      <a class="work" href="https://lcctticketing.42web.io/auth/login.php" target="_blank" rel="noopener"><div class="thumb"><img src="images/project4.jpg" alt="LCCT Ticketing System"><b>↗</b></div><h3>LCCT Ticketing System</h3><p>A ticketing system with user login, built with PHP and MySQL.</p></a>
-      <a class="work" href="https://myrdaplus.42web.io/myrdaplus-web/myrdaplus/login.php?i=1" target="_blank" rel="noopener"><div class="thumb"><img src="images/project5.jpg" alt="MyRDA Plus"><b>↗</b></div><h3>MyRDA Plus</h3><p>A web-based system with secure login, built with PHP and MySQL.</p></a>
-      <a class="work" href="https://planetplayground.42web.io/?i=1" target="_blank" rel="noopener"><div class="thumb"><img src="images/project6.jpg" alt="Planet Playground"><b>↗</b></div><h3>Planet Playground</h3><p>A website project created using HTML, CSS, PHP, and MySQL.</p></a>
-      <a class="work" href="https://cafe.talk4fun.net/cafe/admin_login.php" target="_blank" rel="noopener"><div class="thumb"><img src="images/project7.jpg" alt="Tito Berns POS"><b>↗</b></div><h3>Tito Berns POS</h3><p>A food ordering and point-of-sale system for orders, products, transactions, and receipts.</p></a>
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="w">
+    <div class="tl">
+      <div class="rv"><span class="kick">Experience</span><h2>Where I've worked and studied</h2></div>
+      <ol class="steps rv">
+        <li><time>Present</time><h3>College, 3rd year</h3><p>Completed 1st and 2nd year. Building web systems with PHP and MySQL.</p></li>
+        <li><time>Ongoing</time><h3>Family photo printing business</h3><p>Printing and preparing photos, basic photo editing, and handling customer orders. It taught me responsibility, attention to detail, and quality service.</p></li>
+        <li><time>Graduate</time><h3>Placido T. Amo Senior High School</h3><p>Completed senior high school.</p></li>
+      </ol>
+    </div>
+    <div class="badges rv">
+      <span class="kick">Certificates</span><h2>Cisco badges</h2>
+      <div class="rows">
+        <div class="rw"><span><b>HTML Essentials</b><small>Course</small></span><time>Aug 11, 2026</time></div>
+        <div class="rw"><span><b>Network Technician Career Path</b><small>Exam</small></span><time>Apr 22, 2026</time></div>
+        <div class="rw"><span><b>Network Support and Security</b><small>Course</small></span><time>Apr 20, 2026</time></div>
+        <div class="rw"><span><b>Network Addressing and Basic Troubleshooting</b><small>Course</small></span><time>Apr 14, 2026</time></div>
+        <div class="rw"><span><b>Networking Devices and Initial Configuration</b><small>Course</small></span><time>Apr 11, 2026</time></div>
+        <div class="rw"><span><b>Networking Basics</b><small>Course</small></span><time>Apr 07, 2026</time></div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- SKILLS -->
-<section class="sec" id="skills">
-  <div class="side" aria-hidden="true">/skills</div>
-  <div class="main">
-    <div class="meta"><span>03</span><i></i><span>/What I do</span></div>
-    <h2 class="lead" style="margin-bottom:50px">Tools I use to turn ideas into working projects.</h2>
-    <div class="bento">
-      <div class="tile dk"><span class="ic">🧱</span><div><h3>HTML</h3><p>Website structures and pages.</p></div></div>
-      <div class="tile"><span class="ic">🎨</span><div><h3>CSS</h3><p>Responsive and modern layouts.</p></div></div>
-      <div class="tile hot"><span class="ic">⚙️</span><div><h3>PHP</h3><p>Dynamic web applications.</p></div></div>
-      <div class="tile"><span class="ic">🗄️</span><div><h3>MySQL</h3><p>Managing and organizing databases.</p></div></div>
-      <div class="tile"><span class="ic">✨</span><div><h3>UI Design</h3><p>Simple, user-friendly interfaces.</p></div></div>
-      <div class="tile dk"><span class="ic">🧩</span><div><h3>Problem Solving</h3><p>Finding solutions to programming problems.</p></div></div>
-      <div class="tile dk w2"><span class="ic">🖨️</span><div><h3>Photo Printing</h3><p>Real work experience in our family business.</p>
-        <ul class="list"><li>Photo printing and processing</li><li>Basic photo editing</li><li>Resizing and cropping</li><li>Picture layout</li><li>Customer service</li><li>Managing orders</li><li>Operating printing equipment</li></ul></div></div>
-    </div>
-    <div class="stats" style="margin-top:56px">
-      <div class="stat"><b data-n="6">0</b><span>Projects built</span></div>
-      <div class="stat"><b data-n="6">0</b><span>Cisco badges earned</span></div>
-      <div class="stat"><b data-n="3" data-s="rd">0</b><span>Year college student</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- EDUCATION -->
-<section class="sec" id="education">
-  <div class="side" aria-hidden="true">/education</div>
-  <div class="main">
-    <div class="meta"><span>04</span><i></i><span>/Journey</span></div>
-    <h2 class="big">education</h2>
-    <div class="rows">
-      <div class="rw"><h3>College</h3><p>Currently a 3rd year student. Completed 1st and 2nd year.</p><time>Present</time></div>
-      <div class="rw"><h3>Senior High School</h3><p>Graduate of Placido T. Amo Senior High School.</p><time>Graduate</time></div>
-    </div>
-  </div>
-</section>
-
-<!-- CERTIFICATES -->
-<section class="sec" id="certificates">
-  <div class="side" aria-hidden="true">/certificates</div>
-  <div class="main">
-    <div class="meta"><span>05</span><i></i><span>/Achievements</span></div>
-    <h2 class="big">badges</h2>
-    <p style="color:var(--mute);margin:-20px 0 30px">Cisco Networking Academy badges earned in 2026.</p>
-    <div class="rows">
-      <div class="rw"><h3>HTML Essentials</h3><p>Course</p><time>Aug 11, 2026</time></div>
-      <div class="rw"><h3>Network Technician Career Path</h3><p>Exam</p><time>Apr 22, 2026</time></div>
-      <div class="rw"><h3>Network Support and Security</h3><p>Course</p><time>Apr 20, 2026</time></div>
-      <div class="rw"><h3>Network Addressing and Basic Troubleshooting</h3><p>Course</p><time>Apr 14, 2026</time></div>
-      <div class="rw"><h3>Networking Devices and Initial Configuration</h3><p>Course</p><time>Apr 11, 2026</time></div>
-      <div class="rw"><h3>Networking Basics</h3><p>Course</p><time>Apr 07, 2026</time></div>
+<!-- SERVICES -->
+<section id="services">
+  <div class="w">
+    <div class="rv"><span class="kick">Services</span><h2>What I can build for you</h2><p class="sub">From the first idea to a working page or system.</p></div>
+    <div class="svc">
+      <div class="card rv"><div><em>01</em><h3>Web systems</h3><p>Ticketing, point-of-sale, and order management with secure login.</p></div><div><small>Tools</small><ul><li>PHP</li><li>MySQL</li><li>User login</li><li>Admin panel</li></ul></div></div>
+      <div class="card rv"><div><em>02</em><h3>Websites &amp; UI</h3><p>Responsive pages with simple, user-friendly interfaces.</p></div><div><small>Tools</small><ul><li>HTML</li><li>CSS</li><li>Responsive design</li><li>UI design</li></ul></div></div>
+      <div class="card rv"><div><em>03</em><h3>Photo printing &amp; editing</h3><p>Prepared and printed photos for real customers in our family business.</p></div><div><small>Skills</small><ul><li>Basic editing</li><li>Resize &amp; crop</li><li>Layout</li><li>Customer orders</li></ul></div></div>
     </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section class="sec" id="faq">
-  <div class="side" aria-hidden="true">/faq</div>
-  <div class="main faq">
-    <div class="meta"><span>06</span><i></i><span>/Questions</span></div>
-    <h2 class="big">faq</h2>
-    <details open><summary>What kind of projects do you build?</summary><p>Web-based systems such as ticketing, point-of-sale, and printing order management, using HTML, CSS, PHP, and MySQL.</p></details>
-    <details><summary>What experience do you have outside of coding?</summary><p>I help run our family photo printing business: printing and preparing photos, basic editing, and handling customer orders. It taught me responsibility and attention to detail.</p></details>
-    <details><summary>What are you learning right now?</summary><p>I am in my 3rd year of college and keep improving my web development skills. I also earned six Cisco Networking Academy badges in networking and HTML.</p></details>
-    <details><summary>How can I work with you?</summary><p>Send me an email or message me through the contact section. I am open to learning and building new projects.</p></details>
+<section id="faq">
+  <div class="w faqw">
+    <div class="rv"><span class="kick">FAQ</span><h2>Questions, answered</h2></div>
+    <div class="rv">
+      <details open><summary>What kind of projects do you build?</summary><p>Web systems like ticketing, point-of-sale, and printing order management, plus websites made with HTML, CSS, PHP, and MySQL.</p></details>
+      <details><summary>Are you still studying?</summary><p>Yes. I'm in my 3rd year of college and keep improving my skills through school projects and Cisco Networking Academy courses.</p></details>
+      <details><summary>Do you have work experience?</summary><p>I help run our family photo printing business, where I handle printing, photo preparation, basic editing, and customer orders.</p></details>
+      <details><summary>How can I reach you?</summary><p>Email me at jakemathew05@gmail.com or call 09563907798. I'm based in Laurel, Batangas.</p></details>
+    </div>
   </div>
 </section>
 
-<!-- CONTACT -->
-<section class="end" id="contact">
-  <div class="meta"><span>07</span><i></i><span>/Contact</span></div>
-  <p class="tag">Have a project or an opportunity? <em>Let's build something useful together.</em></p>
-  <div class="links">
-    <a href="mailto:jakemathew05@gmail.com"><small>Email</small>jakemathew05@gmail.com</a>
-    <a href="tel:09563907798"><small>Phone</small>09563907798</a>
-    <div><small>Location</small>Pob. 4, Laurel, Batangas, Philippines</div>
-  </div>
-  <a class="btn" href="mailto:jakemathew05@gmail.com">Send me an email</a>
-  <button class="btn" id="copy" type="button" style="margin-left:8px">Copy email</button>
-  <div class="giant">GET IN TOUCH</div>
-  <div class="foot"><span>© 2026 Jake Mathew Galit. All rights reserved.</span><a href="#home">Back to top ↑</a></div>
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="w"><div class="box rv">
+    <span class="kick">Available for new projects</span>
+    <h2>Got an idea? Let's make it real.</h2>
+    <div class="row"><a class="btn" href="mailto:jakemathew05@gmail.com">Send me an email ↗</a><button class="btn ghost" id="copy" type="button">Copy email</button></div>
+  </div></div>
 </section>
-</div>
+</main>
+
+<footer>
+  <div class="w">
+    <div class="fg">
+      <div><a class="brand" href="#home">JAKE GALIT</a><p class="about-f">Student, web developer and basketball enthusiast from Laurel, Batangas.</p></div>
+      <div><h4>Pages</h4><ul><li><a href="#work">Work</a></li><li><a href="#about">About</a></li><li><a href="#experience">Experience</a></li><li><a href="#services">Services</a></li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="mailto:jakemathew05@gmail.com">jakemathew05@gmail.com</a></li><li><a href="tel:09563907798">09563907798</a></li></ul></div>
+      <div><h4>Location</h4><ul><li>Pob. 4, Laurel, Batangas, Philippines</li></ul></div>
+    </div>
+    <div class="bot"><span>© 2026 Jake Mathew Galit. All rights reserved.</span><a href="#home">Back to top ↑</a></div>
+  </div>
+  <div class="ghost-name" aria-hidden="true">JAKE GALIT</div>
+</footer>
 
 <script>
 (function(){
-  /* project image fallback */
-  document.querySelectorAll('.thumb img').forEach(function(img){
-    function fb(){var t=(img.alt||'Project').replace(/[<&]/g,'');img.onerror=null;
-      img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="800" height="600"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff5a1f"/><stop offset="1" stop-color="#1a0a05"/></linearGradient></defs><rect width="800" height="600" fill="url(#g)"/><text x="400" y="310" font-family="Arial" font-size="40" font-weight="bold" fill="#fff" text-anchor="middle">'+t+'</text></svg>')}
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* image fallback (orange art) */
+  document.querySelectorAll('.th img,.pic img').forEach(function(img){
+    function fb(){img.onerror=null;img.style.display='none'}
     img.addEventListener('error',fb,{once:true});
     if(img.complete&&img.naturalWidth===0)fb();
   });
-  var p=document.querySelector('.photo');
-  if(p){p.addEventListener('error',function(){p.style.opacity=.9;p.removeAttribute('src')},{once:true})}
 
-  /* links without a URL yet */
+  /* projects without URL yet */
   document.querySelectorAll('[data-soon]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault()})});
 
-  /* active nav link */
-  var links={};document.querySelectorAll('#nav a').forEach(function(a){links[a.getAttribute('href').slice(1)]=a});
-  if('IntersectionObserver' in window){
-    var spy=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){
-      Object.keys(links).forEach(function(k){links[k].classList.remove('on')});
-      var l=links[e.target.id];if(l)l.classList.add('on')}})},{rootMargin:'-40% 0px -55% 0px'});
-    document.querySelectorAll('section[id]').forEach(function(s){spy.observe(s)});
+  /* category filter */
+  var pills=document.querySelectorAll('.pill'),projs=document.querySelectorAll('.proj');
+  pills.forEach(function(p){p.addEventListener('click',function(){
+    pills.forEach(function(x){x.classList.remove('on')});p.classList.add('on');
+    var f=p.dataset.f,n=0;
+    projs.forEach(function(el){
+      var show=f==='all'||el.dataset.c===f;
+      if(show){el.classList.remove('hide');el.classList.add('fade');n++;(function(e,i){setTimeout(function(){e.classList.remove('fade')},30+i*60)})(el,n)}
+      else el.classList.add('hide');
+    });
+  })});
 
-    /* count-up */
-    var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  /* mobile menu */
+  var menu=document.getElementById('menu'),nav=document.getElementById('nav');
+  menu.addEventListener('click',function(){var o=nav.classList.toggle('open');menu.setAttribute('aria-expanded',o)});
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');menu.setAttribute('aria-expanded','false')})});
+
+  /* scroll spy + reveal + count-up */
+  var map={};nav.querySelectorAll('a').forEach(function(a){map[a.getAttribute('href').slice(1)]=a});
+  var counters=document.querySelectorAll('[data-n]'),rv=document.querySelectorAll('.rv');
+  function show(el){el.textContent=el.dataset.n+(el.dataset.s||'')}
+  if('IntersectionObserver' in window){
+    var spy=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){Object.keys(map).forEach(function(k){map[k].classList.remove('on')});if(map[e.target.id])map[e.target.id].classList.add('on')}})},{rootMargin:'-45% 0px -50% 0px'});
+    document.querySelectorAll('section[id]').forEach(function(x){spy.observe(x)});
+    var ro=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target)}})},{threshold:.12});
+    rv.forEach(function(el){ro.observe(el)});
     var co=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;co.unobserve(e.target);
-      var el=e.target,n=+el.dataset.n,s=el.dataset.s||'';
-      if(reduce){el.textContent=n+s;return}
-      var t0=null;(function step(t){t0=t0||t;var p=Math.min((t-t0)/1200,1);el.textContent=Math.round(n*(1-Math.pow(1-p,3)))+s;if(p<1)requestAnimationFrame(step)})(performance.now());
-    })},{threshold:.6});
-    document.querySelectorAll('[data-n]').forEach(function(c){co.observe(c)});
-  }else{document.querySelectorAll('[data-n]').forEach(function(c){c.textContent=c.dataset.n+(c.dataset.s||'')})}
+      var el=e.target,n=+el.dataset.n;if(reduce){show(el);return}
+      var t0=null;(function step(t){t0=t0||t;var p=Math.min((t-t0)/1200,1);el.textContent=Math.round(n*(1-Math.pow(1-p,3)))+(el.dataset.s||'');if(p<1)requestAnimationFrame(step)})(performance.now())})},{threshold:.6});
+    counters.forEach(function(c){co.observe(c)});
+  }else{rv.forEach(function(el){el.classList.add('in')});counters.forEach(show)}
 
   /* copy email */
-  var b=document.getElementById('copy');
+  var b=document.getElementById('copy'),m='jakemathew05@gmail.com';
   b.addEventListener('click',function(){
-    var m='jakemathew05@gmail.com';
     function ok(){b.textContent='Copied!';setTimeout(function(){b.textContent='Copy email'},1800)}
     if(navigator.clipboard){navigator.clipboard.writeText(m).then(ok,function(){location.href='mailto:'+m})}else{location.href='mailto:'+m}
   });
 
-  /* one open FAQ at a time */
-  var ds=document.querySelectorAll('.faq details');
+  /* one FAQ open at a time */
+  var ds=document.querySelectorAll('details');
   ds.forEach(function(d){d.addEventListener('toggle',function(){if(d.open)ds.forEach(function(o){if(o!==d)o.open=false})})});
 })();
 </script>
