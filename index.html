@@ -261,6 +261,9 @@ nav a:hover::after,nav a.on::after{transform:scaleX(1)}
 .feat.rev .cc{order:2}
 @media(max-width:900px){.feat.rev{grid-template-columns:1fr}.feat.rev .cc{order:0}}
 #certificates .badges:first-child{margin-top:0}
+.nums{grid-template-columns:repeat(4,1fr);gap:12px}
+.num{padding:20px 18px}
+@media(max-width:720px){.nums{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
@@ -296,11 +299,12 @@ nav a:hover::after,nav a.on::after{transform:scaleX(1)}
     <div class="rv">
       <span class="kick">About me</span>
       <h2>A student who learned by building</h2>
-      <p>I'm interested in technology, web development, and creating useful digital projects. I enjoy learning HTML, CSS, PHP, MySQL, and other programming technologies.</p>
+      <p>I'm interested in technology, web development, and creating useful digital projects. I enjoy learning HTML, CSS, PHP, MySQL, and other programming technologies. I have earned six Cisco Networking Academy badges and two seminar certificates from IT Week 2026.</p>
       <p>Outside of programming, I enjoy playing basketball, spending time with friends, and learning new skills. My goal is to keep improving my technical skills and create projects that can help people.</p>
       <div class="nums">
-        <div class="num"><b data-n="6">0</b><span>Projects built</span></div>
+        <div class="num"><b data-n="4" data-auto="projects">0</b><span>Projects built</span></div>
         <div class="num"><b data-n="6">0</b><span>Cisco badges earned</span></div>
+        <div class="num"><b data-n="2">0</b><span>Seminar certificates</span></div>
         <div class="num"><b data-n="3" data-s="rd">0</b><span>Year college student</span></div>
       </div>
     </div>
@@ -599,6 +603,14 @@ nav a:hover::after,nav a.on::after{transform:scaleX(1)}
   if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);
   addEventListener('load',fit);
   addEventListener('resize',fit);
+})();
+</script>
+
+<script>
+/* Projects built always matches the number of project cards */
+(function(){
+  var n=document.querySelectorAll('.proj').length;
+  if(n)document.querySelectorAll('[data-auto="projects"]').forEach(function(el){el.dataset.n=n});
 })();
 </script>
 </body>
