@@ -256,6 +256,10 @@ nav a:hover::after,nav a.on::after{transform:scaleX(1)}
 
 @media(max-width:720px){nav a::after{display:none}.hero::before{width:320px;height:320px}}
 @media(prefers-reduced-motion:reduce){.wi,.wi.or{transform:none}.sr,.proj.pre{opacity:1;transform:none}.steps::before,.steps li::before{transform:none}.glow,.prog{display:none}}
+.feat+.feat{margin-top:24px}
+.feat.rev{grid-template-columns:1fr 1.2fr}
+.feat.rev .cc{order:2}
+@media(max-width:900px){.feat.rev{grid-template-columns:1fr}.feat.rev .cc{order:0}}
 </style>
 </head>
 <body>
@@ -342,7 +346,7 @@ nav a:hover::after,nav a.on::after{transform:scaleX(1)}
       </div>
     </div>
     <div class="badges rv">
-      <span class="kick">Seminars</span><h2>Certificate of participation</h2>
+      <span class="kick">Seminars</span><h2>Certificates of participation</h2>
       <div class="feat">
         <button class="cc" type="button" aria-label="View certificate"><img src="images/certificate-it-week-2026.jpg" alt="Certificate of Participation, IT Week 2026, La Consolacion College Tanauan"></button>
         <div>
@@ -350,6 +354,15 @@ nav a:hover::after,nav a.on::after{transform:scaleX(1)}
           <h3>Bridging Business and Technology for the Next Generation</h3>
           <p>Active participation in the seminar held in celebration of IT Week 2026 at La Consolacion College Tanauan.</p>
           <time>Mar 21, 2026</time>
+        </div>
+      </div>
+      <div class="feat rev">
+        <button class="cc" type="button" aria-label="View robotics certificate" style="aspect-ratio:1451/1084"><img src="images/certificate-robotics-2026.jpg" alt="Certificate of Participation, Design, Build, Innovate: The Robotics Experience, LCCT ICT Week 2026"></button>
+        <div>
+          <em>Certificate</em>
+          <h3>Design, Build, Innovate: The Robotics Experience</h3>
+          <p>Active participation in the robotics seminar during LCCT ICT Week 2026 at La Consolacion College Tanauan, Batangas.</p>
+          <time>Mar 19, 2026</time>
         </div>
       </div>
     </div>
