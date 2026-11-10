@@ -108,7 +108,16 @@ nav a.on::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2
 .rw:hover .ci img{transform:scale(1.08)}
 .lb{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.88);display:none;place-items:center;padding:24px;cursor:zoom-out}
 .lb.open{display:grid}
-.lb img{max-width:min(92vw,520px);max-height:88vh;border-radius:16px;background:#fff}
+.lb img{max-width:min(92vw,1200px);max-height:90vh;border-radius:16px;background:#fff}
+.lb img.sm{max-width:min(92vw,520px)}
+.feat{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;margin-top:34px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px}
+.cc{display:block;padding:0;border-radius:14px;overflow:hidden;border:1px solid var(--line);cursor:zoom-in;aspect-ratio:2000/1414;background:linear-gradient(135deg,#ff8a3d,#8c1c05 60%,#140603)}
+.cc img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.22,1,.36,1)}
+.cc:hover img{transform:scale(1.04)}
+.feat em{font-style:normal;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--or)}
+.feat h3{font-size:clamp(22px,2.6vw,30px);margin:8px 0 10px}
+.feat p{color:var(--mu);font-size:15px;max-width:44ch}
+.feat time{display:block;margin-top:14px;font-size:13px;color:var(--mu)}
 
 /* services */
 .svc{display:grid;gap:16px;margin-top:44px}
@@ -154,6 +163,7 @@ footer .about-f{color:var(--mu);font-size:14px;max-width:34ch;margin-top:10px}
  .hero .w,.about,.tl,.faqw,.card{grid-template-columns:1fr}
  .hero .pic{max-width:380px}
  .rows{grid-template-columns:1fr}
+ .feat{grid-template-columns:1fr;padding:20px}
  .fg{grid-template-columns:1fr 1fr}
 }
 @media(max-width:720px){
@@ -253,6 +263,18 @@ footer .about-f{color:var(--mu);font-size:14px;max-width:34ch;margin-top:10px}
         <div class="rw"><span class="cert"><button class="ci" type="button" aria-label="View Networking Basics badge"><img src="images/badge-networking-basics.png" alt="Networking Basics badge"></button><span><b>Networking Basics</b><small>Course</small></span></span><time>Apr 07, 2026</time></div>
       </div>
     </div>
+    <div class="badges rv">
+      <span class="kick">Seminars</span><h2>Certificate of participation</h2>
+      <div class="feat">
+        <button class="cc" type="button" aria-label="View certificate"><img src="images/certificate-it-week-2026.jpg" alt="Certificate of Participation, IT Week 2026, La Consolacion College Tanauan"></button>
+        <div>
+          <em>Certificate</em>
+          <h3>Bridging Business and Technology for the Next Generation</h3>
+          <p>Active participation in the seminar held in celebration of IT Week 2026 at La Consolacion College Tanauan.</p>
+          <time>Mar 21, 2026</time>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -304,14 +326,14 @@ footer .about-f{color:var(--mu);font-size:14px;max-width:34ch;margin-top:10px}
   <div class="ghost-name" aria-hidden="true">JAKE GALIT</div>
 </footer>
 
-<div class="lb" id="lb" role="dialog" aria-label="Badge preview"><img alt=""></div>
+<div class="lb" id="lb" role="dialog" aria-label="Preview"><img alt=""></div>
 
 <script>
 (function(){
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* image fallback (orange art) */
-  document.querySelectorAll('.th img,.pic img,.ci img').forEach(function(img){
+  document.querySelectorAll('.th img,.pic img,.ci img,.cc img').forEach(function(img){
     function fb(){img.onerror=null;img.style.display='none'}
     img.addEventListener('error',fb,{once:true});
     if(img.complete&&img.naturalWidth===0)fb();
@@ -365,9 +387,9 @@ footer .about-f{color:var(--mu);font-size:14px;max-width:34ch;margin-top:10px}
 
   /* badge lightbox */
   var lb=document.getElementById('lb'),lbi=lb.querySelector('img');
-  document.querySelectorAll('.ci').forEach(function(c){c.addEventListener('click',function(){
+  document.querySelectorAll('.ci,.cc').forEach(function(c){c.addEventListener('click',function(){
     var im=c.querySelector('img');if(!im||im.style.display==='none')return;
-    lbi.src=im.src;lbi.alt=im.alt;lb.classList.add('open');
+    lbi.src=im.src;lbi.alt=im.alt;lbi.classList.toggle('sm',c.classList.contains('ci'));lb.classList.add('open');
   })});
   lb.addEventListener('click',function(){lb.classList.remove('open')});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('open')});
