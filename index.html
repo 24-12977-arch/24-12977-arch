@@ -412,7 +412,7 @@ nav a:hover::after,nav a.on::after{transform:scaleX(1)}
   <div class="w"><div class="box rv">
     <span class="kick">Available for new projects</span>
     <h2>Got an idea? Let's make it real.</h2>
-    <div class="row"><a class="btn" href="mailto:jakemathew05@gmail.com">Send me an email ↗</a><button class="btn ghost" id="copy" type="button">Copy email</button><a class="btn ghost" href="https://www.linkedin.com/in/jake-mathew-galit-18b61344a/" target="_blank" rel="noopener">LinkedIn ↗</a><a class="btn ghost" href="https://github.com/24-12977-arch" target="_blank" rel="noopener">GitHub ↗</a></div>
+    <div class="row"><a class="btn" id="sendmail" href="mailto:jakemathew05@gmail.com?subject=Project%20Inquiry&amp;body=Hi%20Jake%2C%0A%0A">Send me an email ↗</a><button class="btn ghost" id="copy" type="button">Copy email</button><a class="btn ghost" href="https://www.linkedin.com/in/jake-mathew-galit-18b61344a/" target="_blank" rel="noopener">LinkedIn ↗</a><a class="btn ghost" href="https://github.com/24-12977-arch" target="_blank" rel="noopener">GitHub ↗</a></div>
   </div></div>
 </section>
 </main>
@@ -478,11 +478,38 @@ nav a:hover::after,nav a.on::after{transform:scaleX(1)}
     counters.forEach(function(c){co.observe(c)});
   }else{rv.forEach(function(el){el.classList.add('in')});counters.forEach(show)}
 
+  /* send me an email: mailto first, Gmail compose as fallback on desktop */
+  (function(){
+    var a=document.getElementById('sendmail');if(!a)return;
+    var to='jakemathew05@gmail.com',su='Project Inquiry',bd='Hi Jake,\n\n';
+    var mailto='mailto:'+to+'?subject='+encodeURIComponent(su)+'&body='+encodeURIComponent(bd);
+    var gmail='https://mail.google.com/mail/?view=cm&fs=1&to='+to+'&su='+encodeURIComponent(su)+'&body='+encodeURIComponent(bd);
+    var mobile=/Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    a.addEventListener('click',function(e){
+      if(mobile)return; /* phones handle mailto fine */
+      e.preventDefault();
+      var left=false;
+      function mark(){left=true}
+      window.addEventListener('blur',mark,{once:true});
+      window.location.href=mailto;
+      setTimeout(function(){
+        window.removeEventListener('blur',mark);
+        if(!left)window.open(gmail,'_blank','noopener');
+      },900);
+    });
+  })();
+
   /* copy email */
   var b=document.getElementById('copy'),m='jakemathew05@gmail.com';
   b.addEventListener('click',function(){
     function ok(){b.textContent='Copied!';setTimeout(function(){b.textContent='Copy email'},1800)}
-    if(navigator.clipboard){navigator.clipboard.writeText(m).then(ok,function(){location.href='mailto:'+m})}else{location.href='mailto:'+m}
+    function legacy(){
+      var t=document.createElement('textarea');t.value=m;t.style.position='fixed';t.style.opacity='0';
+      document.body.appendChild(t);t.select();
+      try{document.execCommand('copy');ok()}catch(e){b.textContent=m}
+      document.body.removeChild(t);
+    }
+    if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(m).then(ok,legacy)}else{legacy()}
   });
 
   /* one FAQ open at a time */
